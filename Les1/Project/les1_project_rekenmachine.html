@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Les1_project_rekenmachine</title>
+<style>
+    body{ width: 50%;
+    background-color: yellow;
+    margin: 0 auto;
+    text-align: center;
+    font-family:verdana, arial, helvetica, sans-serif;
+    font: 15%;
+        
+    }
+    
+    </style>
+
+</head>
+
+<body>
+    <h1>Javascript Proefproject</h1>
+<script type="text/javascript">
+function telOp(waarde1, waarde2) {
+    return waarde1 + waarde2
+};
+function  vermenigvuldig(waarde1, waarde2) {
+    return waarde1 * waarde2 
+};
+function  deel(waarde1, waarde2) {
+    return waarde1 / waarde2
+};
+function verminder(waarde1, waarde2) {
+    return waarde1 - waarde2
+};
+
+    
+
+document.write('uitkomst optellen:' + telOp(7,8) +
+'<br>');
+    document.write('uitkomst verminder:' + verminder(10,5) +
+'<br>');
+    document.write('uitkomst vermenigvuldig:' + vermenigvuldig(5,5) +
+'<br>');
+    document.write('uitkomst deel:' + deel(100,10) +
+'<br');
+    
+    Function optellen(){
+        this.waarde1 = 0;
+        this.waarde2 = 0;
+        return  this.waarde1 + this.waarde2;      
+    };
+        Function verminderen(){
+        this.waarde1 = 0;
+        this.waarde2 = 0;      
+        return  this.waarde1 - this.waarde2;   
+    };
+        Function vermenigvuldigen(){
+        this.waarde1 = 0;
+        this.waarde2 = 0;    
+        return  this.waarde1 * this.waarde2;     
+    };
+            Function delen(){
+        this.waarde1 = 0;
+        this.waarde2 = 0;
+        return  this.waarde1 / this.waarde2; 
+    };
+    var uitkomst;
+    var reken = new 
+uitkomst = reken.telOp();
+uitkomst = reken.vermenigvuldig();
+uitkomst = reken.deel();
+uitkomst = reken.verminder();
+
+    
+</script>
+
+</body>
+</html>
