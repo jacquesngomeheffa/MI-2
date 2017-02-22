@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<title>CSS Script voor oef2.3</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Steven" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="voorbeelden.css">
+		<style>
+            .titel{
+                text-align: center;
+                line-height: 200px;
+                font-size: 1px;
+                color:#00b;
+            }
+		</style>
+		<script src="js/jquery-3.1.1.js"></script>
+        <script>
+                     
+            $(
+
+                function () {
+                    
+                    $('tbody tr:odd').css("background-color","#ccc");
+                    $('tbody tr:even').css("background-color","#eee");
+                    $("#filter").change(function(){
+                        
+                        var tekst = $(this).val();
+                        $("tbody tr").hide();
+                        $("tbody tr td:contains('" + tekst + "')").parent().show();
+                    });
+                    
+                });
+            
+                
+            
+            
+            
+        </script>
+		
+
+	</head>
+
+	<body>
+        <p>
+            Filter:
+            <input type="text" id="filter">
+        
+        </p>
+        <table id="weerdata">
+        <thead>
+            <tr>
+                <th>plaats</th>
+                <th>temperatuur</th>
+                <th>wind</th>
+                <th>vocht (%)</th>  
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Arnhem</td><td>10,5</td><td>W 2</td><td>97</td>
+                </tr>
+                <tr>
+                    <td>Debilt</td><td>12,9</td><td>WWJ</td><td>88</td>
+                </tr>
+                <tr>
+                    <td>Groningen</td><td>9,9</td><td>NW2</td><td>91</td>
+                </tr>
+                <tr>
+                    <td>Rotterdam</td><td>12,6</td><td>NW3</td><td>93</td>
+                </tr>
+                <tr>
+                    <td>Vlissingen</td><td>8,0</td><td>WZW3</td><td>89</td>
+                </tr>
+                <tr>
+                    <td>Maarstricht</td><td>9,5</td><td>WZW2</td><td>70</td>
+                </tr>
+            
+            
+            
+            </tbody>
+            </table>
+	</body>
+</html>
