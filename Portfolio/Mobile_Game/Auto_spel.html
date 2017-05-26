@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Autospel Jacques</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width,height=device-height initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Css/Css.css">
+    <link rel="stylesheet" href="Css/framework7.material.min.css">
+    <link rel="stylesheet" href="Css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="Css/my-app.css">
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="js/jquery-3.1.1.min.js">
+    </script>
+    <script src="Script/script_code.js">
+    </script>
+    <script src="js/jquery-1.11.2.min.js"></script>
+</head>
+
+<body class>
+    <div class="panel-overlay"></div>
+    <div id="panelLeft" class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <h2> Gelieve hieronder uw niveau te selecteren!</h2> </div>
+        <div class="level">
+            <button id="Gemakkelijk" type="submit" onclick="gemakkelijkFunction();"> Gemakkelijk</button>
+        </div>
+        <div class="level">
+            <button id="Gemiddeld" type="submit" onclick="gemiddeldFunction();">Gemiddeld</button>
+        </div>
+        <div class="level">
+            <button id="Moeilijk" type="submit" onclick="moeilijkFunction();">Moeilijk</button>
+        </div>
+        <div class="naam"> Speler : <span id="naam" class="toonNaam"> </span></div>
+        <div class="collision"> Collisions : <span id="infoMobile" class="info">0</span></div>
+        <div><span id="timerMobile" class="timer"></span></div>
+        <div><span id="verliesMobile"></span></div>
+        <div><span id="uwScoreMobile"></span></div>
+    </div>
+    <div class="panel panel-right panel-cover">
+        <div class="content-block">
+            <div id="highscoreDB">
+                <div>
+                    <h1>Highscore</h1> </div>
+                <table id="highscoreTableDB">
+                    <thead>
+                        <tr>
+                            <th>Naam speler</th>
+                            <th>Score speler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="center sliding"> Menu </div>
+                    <div class="right">
+                        <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar">
+                <div class="toolbar-inner"> <a href="#" class="button" id="Herstart" onclick="herstartFunction();">Herstarten</a> <a href="#" class="button" id="muziekaan" onclick="pauseFunction()">Muziek Uit/Aan</a> <a href="#" data-panel="right" id="Hscore" class="button open-panel">Highscore</a> </div>
+            </div>
+            <div class="page-content">
+                <div id="leftLevel">
+                    <div>
+                        <h1>Level</h1> </div>
+                    <div class="score">
+                        <div class="level">
+                            <button id="Gemakkelijk" type="submit" onclick="gemakkelijkFunction();"> Gemakkelijk</button>
+                        </div>
+                        <div class="level">
+                            <button id="Gemiddeld" type="submit" onclick="gemiddeldFunction();">Gemiddeld</button>
+                        </div>
+                        <div class="level">
+                            <button id="Moeilijk" type="submit" onclick="moeilijkFunction();">Moeilijk</button>
+                        </div>
+                        <div class="naam"> Speler : <span id="naam" class="toonNaam"> </span></div>
+                        <div class="collision"> Collisions : <span id="info" class="info">0</span></div>
+                        <div><span id="timer" class="timer"></span></div>
+                        <div><span id="verlies"></span></div>
+                        <div><span id="uwScore"></span></div>
+                    </div>
+                </div>
+                <div class="spelNiveau">
+                    <div class="boodschap"> Selecteer uw level</div>
+                    <div id="jeu"> <img id="fond1" class="fond" src="images/route.png"> <img id="fond2" class="fond" src="images/route.png"> <img id="fond3" class="fond" src="images/route.png"> <img id="vj" src="images/vj.png"> <img id="vr" src="images/vr.png"> <img id="vr2" src="images/vr.png"> <img id="vr3" src="images/vr.png"> <img id="links" src="images/naarLinks.png"><img id="rechts" src="images/naarRechts.png"> </div>
+                   
+                    <audio preload="auto" id="son">
+                        <source src="song/beep.mp3" type="audio/mp3">
+                        <source src="beep.ogg" type="audio/ogg">
+                    </audio>
+                    <audio preload="auto" id="muziek">
+                        <source src="song/Eminem_Space_Bound.mp3" type="audio/mp3">
+                        <source src="Eminem_Space_Bound.ogg" type="audio/ogg">
+                    </audio>
+                </div>
+                <div id="rightDatabase" class="">
+                    <div data-role="page" id="highscoreDB">
+                        <div data-role="header" data-position="fixed">
+                            <h1>Highscore</h1> </div>
+                        <div data-role="content" class="score">
+                            <table id="highscoreTableDB">
+                                <thead>
+                                    <tr>
+                                        <th>Naam van de speler</th>
+                                        <th>Score van de speler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>

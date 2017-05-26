@@ -1,0 +1,92 @@
+--------------------------------------------------------------------------------------------------------------------------
+   LE CODE HTML POUR AFFICHER LES RECORDS DU DATABASE 
+
+<div data-role="page" id="highscoreDB">
+			<div data-role="header" data-position="fixed" >
+				<h1>Highscore</h1>
+			</div>
+			<div data-role="content">
+				<table id="highscoreTableDB">
+					<thead>
+						<tr>
+							<th>Naam van de speler</th>
+							<th>Score van de speler</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+
+		</div>
+--------------------------------------------------------------------------------------------------------------------------
+LE CODE POUR UPDATEN LE DATABASE QUAND DE NOUVEAU DONNEES ONT ETE AJOUTE
+$(document).ready(function () {
+    naam = "Jacques";
+    score = "00:30"
+    highScore = [{
+        "naam": naam,
+        "score": score
+				}];
+
+
+    $(document).bind('pageinit', function () {
+        // schakel de transities bij navigatie tussen
+        // schermen uit.
+        $.mobile.defaultPageTransition = 'none';
+    });
+
+    // open de databank
+    db = openDatabase('mydb', '1.0', 'Test DB', 0.1 * 1024 * 1024);
+
+    db.transaction(function (tx) {
+        // maak de tabel aan als deze nog niet bestond
+        tx.executeSql('CREATE TABLE IF NOT EXISTS highscores (naam, score)');
+        // haal het aantal highscores op uit de tabel highscores
+        // de ? worden vervangen door de elementen in de array na
+        // de querystring
+        tx.executeSql('select count(*) as aantal from highscores where naam like ? and score like ?', [naam, score], function (tx, results) {
+            // kijk na of het resultaat ok is.
+            console.log("select werkt");
+            if (results.rows.item(0).aantal === 0) {
+                // er was nog geen combinatie met de naam & score in de db, dus voeg die nu toe :
+                tx.executeSql('INSERT INTO highscores (naam,score) VALUES (?, ?)', [naam, score], function (tx, results) {
+                    // de select was ok
+                    console.log("ok!");
+                }, function (tx, error) {
+                    // er was een probleem met de select
+                    console.log("NOK!");
+                });
+            }
+
+        }, function (tx, error) {
+            console.log("NOK!");
+        });
+    });
+
+    // update de gegevens in de tabellen op het 2e en 3e scherm
+    updateTables();
+    updateTablesSQL();
+
+
+});
+
+
+-------------------------------------------------------------------------------------------------------------------------
+LE CODE POUR AJOUTER DE NOUVEAU DONNEE
+ var naam, score; //<--- il faut les attribuer de nouvelles donnéés
+ highScore.push({
+                        "naam": naam,
+                        "score": score
+                    });
+
+                    db.transaction(function (tx) {
+                        tx.executeSql('INSERT INTO highscores (naam,score) VALUES (?, ?)', [naam, score]);
+                    });
+
+                    updateTablesSQL();
