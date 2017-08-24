@@ -1,0 +1,14 @@
+.white{
+    width: 36px;
+    height: 36px;
+    background: black;
+    float: left;
+}
+
+.black{
+    width: 36px;
+    height: 36px;
+    background: white;
+    float: left;
+}
+

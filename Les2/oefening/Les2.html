@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<meta name="author" content="me" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />       
+		<title>MI2-les2</title>
+         <link rel="stylesheet" href="Stijlblad.css">
+</head>
+
+<body>
+   
+    <script type="text/javascript">
+        var even = 0;
+        for (var i = 1; i <= 8; i++) {
+            for (var x = 1; x <= 8; x++) {
+                if ( x % 2 == even) {
+                    document.write('<div class="black"></div>');
+                }
+                else {
+                    document.write('<div class="white"></div>');
+                }
+            }
+            if (i % 2 == 0) {
+                even = 0;
+            }
+            else {
+                even = 1;
+            }
+            document.write('<br>');
+            document.write('<br>');
+        }
+        
+    </script>
+</body>
+
+</html>
