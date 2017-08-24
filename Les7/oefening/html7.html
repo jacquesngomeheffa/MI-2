@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Les 6 : voorbeeld 6 : JSON</title>
+    <meta name="description" content="" />
+    <meta name="author" content="Steven" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+        "use strict";
+        /*global $, console */
+
+        $(function() {
+            // de JSON data ophalen
+            $.ajax({
+                    type: "Get",
+                    url: "http://api.tvmaze.com/singlesearch/shows?q=game-of-thrones",
+                    dataType: 'json',
+                })
+            
+            .done(function(response) {
+                
+
+                
+                
+                
+                
+                
+                
+                var machin ="";
+                var machin2 ="";
+                var machin3 ="";
+                machin2 += "<h1>" + "bonjour" + "<\h1>";
+                machin += "<div>" + response.name + "<\div>" ;
+                machin += "<div>" + response.genres + "<\div>" ;
+                machin += "<div>" + response.language + "<\div>";
+                machin += "<div>" + response._links.self.href + "<br>" +  response._links.previousepisode.href + "<\div>";
+                machin3 += "<h2><a href>'" + response.image.medium + "'<\a><\h2>";
+                
+                
+                $("div").html(machin);
+                $("h1").html(machin2);
+                $("h2").html(machin3);
+                
+      console.log( response );
+   })           
+                
+        });
+    </script>
+</head>
+
+<body>
+
+        <header>
+            <h1></h1>
+            <div>
+         
+        </div>
+            <h2></h2>
+        </header>
+        
+        
+       
+
+</body>
+
+</html>
