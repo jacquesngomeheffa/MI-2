@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>jQuery - de Basis vb p68-70</title>
+    <meta name="description" content="" />
+    <meta name="author" content="Steven" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" /> 
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    "use strict";
+    /*global $ */
+    $(function () {
+        $("body>div>div>ul>li.actief").prev().css("color", "#aaa");
+        $("ul ul >li.actief").prevAll().css("color", "red");
+        $("body>div>div>ul>li.actief").children().css("color", "green");
+        $("body>div>div>ul>li.actief").siblings().css("text-decoration", "underline");
+        $("ul ul >li.actief").nextAll().css("font-weight", "bold");
+    });
+</script>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>vb p68-70</h1> </header>
+        <div>
+            <ul>
+                <li>Hoofdstuk 1</li>
+                <li class="actief">Hoofdstuk 2
+                    <ul>
+                        <li>Paragraaf 1</li>
+                        <li>Paragraaf 2</li>
+                        <li class="actief">Paragraaf 3</li>
+                        <li>Paragraaf 4</li>
+                        <li>Paragraaf 5</li>
+                    </ul>
+                </li>
+                <li>Hoofdstuk 3</li>
+                <li>Hoofdstuk 4</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+
+		<title>html5</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Steven" />
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+		<style type="text/css">
+			
+            .titel{
+                text-align: center;
+                line-height: 200px;
+                font-size: 1px;
+                color: #00b;
+            }
+            
+            
+		</style>
+        
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript">
+            "use strict";
+            /*global $ */
+			$(function () {
+				$("#inhoud").addClass("titel","imgha");
+                $("#inhoud").html("Starten met jQuery!");
+                $("#inhoud").animate({
+                    fontSize:"90px"
+                },2500);
+			});
+
+		</script>
+	</head>
+
+	<body>
+		<div id="inhoud">
+			
+		</div>
+	</body>
+</html>

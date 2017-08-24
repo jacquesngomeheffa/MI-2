@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery - de Basis vb p65-66</title>
+    <meta name="description" content="" />
+    <meta name="author" content="Steven" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    "use strict";
+    /*global $ */
+    $(function () {
+        $('tbody tr:odd').css("background-color", "#ccc");
+        $('tbody tr:even').css("background-color", "#eee");
+        $("#filter").change(function () {
+            var tekst = $(this).val();
+            $("tbody tr").hide();
+            $("tbody tr td:contains('" + tekst + "')").parent().show();
+        });
+    });
+</script>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>vb p68-70</h1> </header>
+        <p> Filter:
+            <input type="text" id="filter"> </p>
+        <table id="weerdata">
+            <thead>
+                <tr>
+                    <th>plaats</th>
+                    <th>temperatuur</th>
+                    <th>wind</th>
+                    <th>vocht (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Arnhem</td>
+                    <td>10,5</td>
+                    <td>W 2</td>
+                    <td>97</td>
+                </tr>
+                <tr>
+                    <td>DeBilt</td>
+                    <td>12,9</td>
+                    <td>WNW3</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td>Groningen</td>
+                    <td>9,9</td>
+                    <td>NNW2</td>
+                    <td>91</td>
+                </tr>
+                <tr>
+                    <td>Rotterdam</td>
+                    <td>12,6</td>
+                    <td>NNW3</td>
+                    <td>93</td>
+                </tr>
+                <tr>
+                    <td>Vlissingen</td>
+                    <td>8,0</td>
+                    <td>WZW3</td>
+                    <td>89</td>
+                </tr>
+                <tr>
+                    <td>Maastricht</td>
+                    <td>9,5</td>
+                    <td>WZW2</td>
+                    <td>70</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
