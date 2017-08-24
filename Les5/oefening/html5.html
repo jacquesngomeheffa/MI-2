@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+        <meta name="author" content="Me" />
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <title>MI2-les5</title>
+        
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var tekst;
+        
+           $("#input").change(function (){
+            tekst = $(this).val();               
+        });
+        
+        
+        $("li").click(function(){
+            $(this).css("font-weight", "bold");
+        });
+        
+     
+        $("#Toevoegen").click(function() {
+            $("ul").append('<li>' + tekst + '</li>');
+        });
+        
+    });
+</script>
+</head>
+
+<body> 
+    <div class="locaties">
+        <ul>
+        <li>Anderlecht 50° </li>
+        <li>Leuven 15°</li>
+        <li>Oostende 12°</li>
+        <li>Brussel -9°</li>
+        <li>Mechelen -25° </li>
+        </ul>
+    </div>
+    <input type="button" id="Toevoegen" value="Toevoegen">
+    <input type="text" id="input"> </body>
+
+</html>
