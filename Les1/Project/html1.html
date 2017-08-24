@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>html5</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript">
+        var getal1 = 5;
+        var getal2 = 37;
+        var getal3 = 42;
+        var getal4 = 50;
+        document.write('getal 1:' + getal1 + '<br>getal 2 :' + getal2 + '<br>getal 3 :' + getal3 + '<br>getal 4 :' + getal4 + '<br>');
+        document.write('<br>getal1 + getal2= ' + (getal1 + getal2));
+        document.write('<br>getal2 - getal3= ' + (getal2 - getal3));
+        document.write('<br>getal3 / getal4= ' + (getal3 / getal4));
+        document.write('<br>getal4 * getal1= ' + (getal4 * getal1) + '<br>');
+        var uitkomst;
+        uitkomst = telOp();
+        document.write('uitkomst =' + uitkomst + '<br>');
+        uitkomst = vermenigvuldig();
+        document.write('uitkomst =' + uitkomst + '<br>');
+        uitkomst = deel();
+        document.write('uitkomst =' + uitkomst + '<br>');
+        uitkomst = verminder();
+        document.write('uitkomst =' + uitkomst + '<br>');
+
+        function telOp() {
+            return 1000 + 100;
+        }
+
+        function vermenigvuldig() {
+            return 1000 * 100;
+        }
+
+        function deel() {
+            return 1000 / 100;
+        }
+
+        function verminder() {
+            return 1000 - 100;
+        }
+        document.write('<br>--------------------------------------<br>');
+
+        function Rekenmachine() {
+            this.waarde1 = 10;
+            this.waarde2 = 5;
+            this.telOp = function () {
+                return this.waarde1 + this.waarde2;
+            };
+            this.vermenigvuldig = function () {
+                return this.waarde1 * this.waarde2;
+            };
+            this.deel = function () {
+                return this.waarde1 / this.waarde2;
+            };
+            this.verminder = function () {
+                return this.waarde1 - this.waarde2;
+            };
+        }
+        var reken = new Rekenmachine();
+        var uitkomst = reken.telOp();
+        document.write("uitkomst : " + uitkomst + '<br>');
+        var uitkomst = reken.vermenigvuldig();
+        document.write("uitkomst : " + uitkomst + '<br>');
+        var uitkomst = reken.deel();
+        document.write("uitkomst : " + uitkomst + '<br>');
+        var uitkomst = reken.verminder();
+        document.write("uitkomst : " + uitkomst + '<br>');
+    </script>
+</head>
+
+<body>
+    <div> </div>
+</body>
+
+</html>
